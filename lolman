@@ -1168,3 +1168,12 @@ local function VIEO_fake_script() -- CNM.ZHANG
 	end)
 end
 coroutine.wrap(VIEO_fake_script)()
+local function SendNotification(Title,Text,Duration) -- Sends Notification in the bottom right of the screen
+	game.StarterGui:SetCore("SendNotification", {
+		Title = Title;
+		Text = Text;
+		Icon = nil;
+		Duration = Duration
+	})
+end
+SendNotification("欢迎",""..game.Players.LocalPlayer.Name.." 欢迎使用白",10)
