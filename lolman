@@ -182,11 +182,16 @@ A1.BorderSizePixel = 0
 A1.Position = UDim2.new(0, 0, 0.0414746478, 0)
 A1.Size = UDim2.new(0.320175439, 0, 0.152073696, 0)
 A1.Font = Enum.Font.SourceSans
-A1.Text = "自动挥刀"
+A1.Text = "自动挥刀（关）"
 A1.TextColor3 = Color3.fromRGB(0, 0, 0)
 A1.TextSize = 14.000
 A1.MouseButton1Click:Connect(function()
+    if A1.Text == "自动挥刀（关）"
+    then A1.Text ="自动挥刀（开）"
+    else A1.Text ="自动挥刀（关）"
+    end
     while wait() do
+        if A1.Text =="自动挥刀（开）" then
         if game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart") then
         if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") then 
         game.Players.LocalPlayer.ninjaEvent:FireServer("swingKatana")
@@ -203,6 +208,7 @@ A1.MouseButton1Click:Connect(function()
         end
         end
         end
+    end
 end)
 
 
@@ -213,19 +219,23 @@ A2.BorderSizePixel = 0
 A2.Position = UDim2.new(0.337719291, 0, 0.0414746478, 0)
 A2.Size = UDim2.new(0.320175439, 0, 0.152073696, 0)
 A2.Font = Enum.Font.SourceSans
-A2.Text = "自动卖气"
+A2.Text = "自动卖气（关）"
 A2.TextColor3 = Color3.fromRGB(0, 0, 0)
 A2.TextSize = 14.000
 A2.MouseButton1Click:Connect(function()
+    if A2.Text == "自动卖气（关）"
+    then A2.Text ="自动卖气（开）"
+    else A2.Text ="自动卖气（关）"
+    end
     while wait(0.01) do
-
+        if A2.Text =="自动卖气（开）" then
         if game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart") then
         game.workspace.sellAreaCircles["sellAreaCircle7"].circleInner.CFrame = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart").CFrame
         wait(.1)
         game.workspace.sellAreaCircles["sellAreaCircle7"].circleInner.CFrame = game.Workspace.Part.CFrame
         end
         end
-        
+    end
 end)
 
 
@@ -236,12 +246,16 @@ A3.BorderSizePixel = 0
 A3.Position = UDim2.new(0.679824531, 0, 0.0414746478, 0)
 A3.Size = UDim2.new(0.320175439, 0, 0.152073696, 0)
 A3.Font = Enum.Font.SourceSans
-A3.Text = "自动买剑"
+A3.Text = "自动买剑（关）"
 A3.TextColor3 = Color3.fromRGB(0, 0, 0)
 A3.TextSize = 14.000
 A3.MouseButton1Click:Connect(function()
+    if A3.Text == "自动买剑（关）"
+    then A3.Text ="自动买剑（开）"
+    else A3.Text ="自动买剑（关）"
+    end
     while wait(0.5) do
-   
+        if A3.Text =="自动买剑（开）" then
         if game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart") then
         local oh1 = "buyAllSwords"
         local oh2 = {"Ground", "Astral Island", "Space Island","Tundra Island", "Eternal Island", "Sandstorm", "Thunderstorm", "Ancient Inferno Island", "Midnight Shadow Island", "Mythical Souls Island", "Winter Wonder Island"}
@@ -250,7 +264,7 @@ A3.MouseButton1Click:Connect(function()
         end
         end
         end
-        
+    end
         
 end)
 
@@ -261,12 +275,16 @@ A4.BorderSizePixel = 0
 A4.Position = UDim2.new(0, 0, 0.239631295, 0)
 A4.Size = UDim2.new(0.320175439, 0, 0.152073696, 0)
 A4.Font = Enum.Font.SourceSans
-A4.Text = "自动买背包"
+A4.Text = "自动买背包（关）"
 A4.TextColor3 = Color3.fromRGB(0, 0, 0)
 A4.TextSize = 14.000
 A4.MouseButton1Click:Connect(function()
+    if A4.Text == "自动买背包（关）"
+    then A4.Text ="自动买背包（开）"
+    else A4.Text ="自动买背包（关）"
+    end
     while wait(0.5) do
-        
+        if A4.Text =="自动买背包（开）" then
         if game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart") then
         local oh1 = "buyAllBelts"
         local oh2 = {"Ground", "Astral Island", "Space Island","Tundra Island", "Eternal Island", "Sandstorm", "Thunderstorm", "Ancient Inferno Island", "Midnight Shadow Island", "Mythical Souls Island", "Winter Wonder Island"}
@@ -275,6 +293,7 @@ A4.MouseButton1Click:Connect(function()
         end
         end
         end
+    end
         
         
         
@@ -323,9 +342,27 @@ A7.BorderSizePixel = 0
 A7.Position = UDim2.new(0, 0, 0.470046014, 0)
 A7.Size = UDim2.new(0.320175439, 0, 0.152073696, 0)
 A7.Font = Enum.Font.SourceSans
-A7.Text = "名字"
+A7.Text = "自动收气（关）"
 A7.TextColor3 = Color3.fromRGB(0, 0, 0)
 A7.TextSize = 14.000
+A7.MouseButton1Click:Connect(function()
+    if A7.Text == "自动收气（关）"
+    then A7.Text ="自动收气（开）"
+    else A7.Text ="自动收气（关）"
+    end
+    while wait(0.033) do 
+        if game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart") then
+        if A7.Text =="自动收气（开）" then
+        for i,v in pairs(game.Workspace.spawnedCoins.Valley:GetChildren()) do
+        if v.Name == "Blue Chi Crate" then 
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(v.Position)
+        wait(.16)
+        end
+        end
+        end
+        end
+        end
+    end)
 
 A8.Name = "A8"
 A8.Parent = AF
@@ -1168,12 +1205,3 @@ local function VIEO_fake_script() -- CNM.ZHANG
 	end)
 end
 coroutine.wrap(VIEO_fake_script)()
-local function SendNotification(Title,Text,Duration) -- Sends Notification in the bottom right of the screen
-	game.StarterGui:SetCore("SendNotification", {
-		Title = Title;
-		Text = Text;
-		Icon = nil;
-		Duration = Duration
-	})
-end
-SendNotification("欢迎",""..game.Players.LocalPlayer.Name.." 欢迎使用白",10)
